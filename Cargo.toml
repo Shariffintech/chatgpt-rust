@@ -1,0 +1,16 @@
+[package]
+name = "chatgpt-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hyper = "1.0.0-rc.3"    # A fast and correct HTTP library.
+hyper-tls = "0.5.0"     # Default TLS implementation for use with hyper
+tokio = "1.26.0"        # An event-driven, non-blocking I/O platform for writing asynchronos req
+serde = "1.0.158"       # A generic serialization/deserialization framework
+serde_derive = "1.0.158" # Macros 1.1 implementation of #[derive(Serialize, Deserialize)]
+serde_json = "1.0.94"   # A JSON serialization file format
+spinners = "4.1.0"      # 🛎 60+ Elegant terminal spinners for Rust
+dotenv = "0.15.0"       # A `dotenv` implementation for Rust for loading environment variables
