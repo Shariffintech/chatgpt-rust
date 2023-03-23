@@ -1,0 +1,9 @@
+/Users/shariftarver/Desktop/software_engineering/mastering-rust/chatgpt-rust/target/debug/deps/futures_channel-2322051139707323.rmeta: /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/lib.rs /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/lock.rs /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/mpsc/mod.rs /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/mpsc/queue.rs /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/oneshot.rs
+
+/Users/shariftarver/Desktop/software_engineering/mastering-rust/chatgpt-rust/target/debug/deps/futures_channel-2322051139707323.d: /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/lib.rs /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/lock.rs /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/mpsc/mod.rs /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/mpsc/queue.rs /Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/oneshot.rs
+
+/Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/lib.rs:
+/Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/lock.rs:
+/Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/mpsc/mod.rs:
+/Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/mpsc/queue.rs:
+/Users/shariftarver/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.27/src/oneshot.rs:
