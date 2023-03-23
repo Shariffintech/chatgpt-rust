@@ -3,6 +3,8 @@ use std::env;
 use std::process;
 use hyper::body::Buf;
 use hyper::{header, Client, Body, Request};
+
+//create a httpsconnector with this
 use hyper_tls::HttpsConnector;
 use serde_derive::{Deserialize,Serialize};
 use spinners::{Spinners, Spinners};
@@ -42,8 +44,10 @@ struct OAIRequestdata {
 // tokio async main function
 #[tokio::main]
 async fn main()-> Result<(), Box<dyn std::error::Error + send + Sync>> {
+
+// load env variables
     dotenv.ok();
-    //create httpconnector, hyper
+    //create httpclient, hyper
     let https = HttpsConnector::new(4)?;
     let client = Client::builder().build(https);
     
@@ -78,32 +82,27 @@ async fn main()-> Result<(), Box<dyn std::error::Error + send + Sync>> {
             max_tokens: 600,
             temperature: 1.0,
             frequency: 1.0,
-        } 
+        }; 
 
+        let body = Body::from(serde_json::to_vec(&request_data)?);
+        //url to make the request
+        let request = Request::post(&uri)
+        .header(header::CONTENT_TYPE, "application/json")
+        .header("Authorization", &auth_header_val)
+        .body(body)
+        .unwrap();
 
-          //url to make the request
-          api_request.headers_mut().set(header::CONTENT_TYPE, "application/json");
-          let mut api_request = Request::new(Body::empty());
+        // grab the client provided by hyper and send the request to client
+        //return response and print it  
+        let response = client.request(request).await?;
+        let body = hyper::body::aggregate.await?;
+        let json: OAIResponse = serde_json::from_reader(body.reader())?;
+
+        spin_spin.stop();
+        println!("");
+        println!("{}", json.choices[0].text);
     }
+    Ok(())
 
-
-
-  
-    
-    
-    
-    
- 
-    
 }
-// prompt for user input to chatgpt
-// load env variables
-//create httpclient, hyper
-// token, in the header
-
-//loop  - inside the loop to read user input
-// spinner wait for response from chatgpt
-// request to chatgpt for every single user input
-// response and print response
-
 
