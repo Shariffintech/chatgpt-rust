@@ -3,44 +3,19 @@ use std::env;
 use hyper::body::Buf;
 use hyper::{header, body::Body, Request};
 use std::string::String;  
+use oai_request::OAIRequestdata;
+use crate::oai_choices::OAIChoices;
+use oai_response::OAIResponse;
+mod oai_request;
+mod oai_choices;
+mod oai_response;
 
 //create a httpsconnector with this
 use hyper_tls::HttpsConnector;
-use serde_derive::{Deserialize,Serialize};
 // use spinners::{Spinners, Spinner};
 use spinner::SpinnerBuilder;
 use std::io::{stdin, stdout,  Write};
 
-//struct to work with the api response
-#[derive(Serialize, Deserialize)]
-struct OAIResponse {
-    id: Option<String>,
-    object: String,
-    created:Option<u64>,
-    model: Option<String>,
-    choices: Vec<OAIChoices>,
-}
-
-
-//a struct for the choices
-#[derive(Serialize, Deserialize)]
-struct OAIChoices {
-    text: String,
-    index: u8,
-    logprob: Option<u8>,
-    finish_reason: String,
-}
-
-
-//struct for request to api
-#[derive(Serialize, Deserialize)]
-struct OAIRequestdata {
-    prompt: String,
-    //number of words to generate, not actual tokens
-    max_tokens: u16,
-    temperature: f32,
-    frequency: f32,
-}
 
 // tokio async main function
 #[tokio::main]
@@ -101,7 +76,7 @@ async fn main()-> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 
         spin_spin.close();
         println!("");
-        println!("{}", json.choices[0].text);
+        println!("{}", json.choices()[0].text);
     }
     
     Ok(())
